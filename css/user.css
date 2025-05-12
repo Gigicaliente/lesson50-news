@@ -1,0 +1,44 @@
+.user {
+display: flex;
+text-align: end;
+}
+
+.user__avatar {
+    width: 32px;
+    height: 32px;
+    gap: 10px;
+    border-radius: 16px;
+    border-width: 1px;
+    border: 1px solid #F0F0F0;
+    
+}
+
+.user__name {
+
+}
+
+
+/* .user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user__avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.user__avatar > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.user__name {
+    font-size: 14px;
+    margin: 0;
+} */

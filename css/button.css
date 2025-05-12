@@ -1,0 +1,35 @@
+.button {
+    gap: 10px;
+    padding-block: 12px;
+    padding-inline: 24px;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+}
+
+.button:hover {
+    filter: brightness(90%);
+}
+
+.button--small {
+    gap: 10px;
+    padding-block: 8px;
+    padding-inline: 16px;
+    border-radius: 8px;
+    font-size: 14px;   
+}
+
+.button--blue {
+    background-color: #0077B6;
+}
+
+
+
+.button--red {
+    background: #C1121F;
+
+}
