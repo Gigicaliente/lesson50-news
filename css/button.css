@@ -1,14 +1,13 @@
 .button {
-    gap: 10px;
     padding-block: 12px;
     padding-inline: 24px;
-    border-radius: 8px;
-    color: #FFFFFF;
-    font-weight: 600;
-    font-size: 16px;
     text-decoration: none;
+    border-radius: 8px;
+    transition: brightness 150ms ease-in-out;
     cursor: pointer;
     border: none;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 .button:hover {
@@ -16,20 +15,18 @@
 }
 
 .button--small {
-    gap: 10px;
     padding-block: 8px;
     padding-inline: 16px;
-    border-radius: 8px;
-    font-size: 14px;   
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .button--blue {
-    background-color: #0077B6;
+    background-color: #0077b6;
+    color: #fff;
 }
 
-
-
 .button--red {
-    background: #C1121F;
-
+    background-color: #c1121f;
+    color: #fff;
 }

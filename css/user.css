@@ -1,24 +1,4 @@
 .user {
-display: flex;
-text-align: end;
-}
-
-.user__avatar {
-    width: 32px;
-    height: 32px;
-    gap: 10px;
-    border-radius: 16px;
-    border-width: 1px;
-    border: 1px solid #F0F0F0;
-    
-}
-
-.user__name {
-
-}
-
-
-/* .user {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -41,4 +21,4 @@ text-align: end;
 .user__name {
     font-size: 14px;
     margin: 0;
-} */
+}
