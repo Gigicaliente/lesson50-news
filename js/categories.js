@@ -6,7 +6,8 @@ async function fetchAndRenderCategories() {
         if (!response.ok) throw new Error(`Ошибка HTTP: ${response.status}`);
 
         const categoriesArray = await response.json();
-        document.querySelector('.categories').innerHTML = categoriesArray.map(categories => `
+        document.querySelector('.categories__box').innerHTML = categoriesArray.map(categories => `
+              <div class="categories">
             <h3 class="categories__title">${categories.name}</h3>
             <div class="categories__actions">
                 <a
@@ -22,6 +23,7 @@ async function fetchAndRenderCategories() {
             >
                 Удалить
             </button>
+            </div>
             </div>
             `).join('');
 

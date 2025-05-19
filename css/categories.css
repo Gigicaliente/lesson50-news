@@ -4,12 +4,17 @@ h2 {
     margin-inline: 56px;
 }
 
+.categories__box {
+
+   margin-inline: 56px;
+    margin-block: 48px;
+}
+
 .categories {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-inline: 56px;
-    margin-block: 48px;
+
 }
 
 
