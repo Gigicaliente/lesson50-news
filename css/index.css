@@ -2,6 +2,7 @@
 @import url(header.css);
 @import url(user.css);
 @import url(news.css);
+@import url(categories.css);
 
 *,
 *::before,
@@ -14,3 +15,4 @@ body {
     margin: 0;
     font-family: Inter, sans-serif;
 }
+

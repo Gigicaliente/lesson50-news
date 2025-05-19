@@ -1,0 +1,23 @@
+h2 {
+    font-weight: 700;
+    font-size: 32px;
+    margin-inline: 56px;
+}
+
+.categories {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-inline: 56px;
+    margin-block: 48px;
+}
+
+
+.categories__title {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.categories__actions {
+    
+}

@@ -2,7 +2,7 @@
 <html lang="ru">
     <head>
         <!-- Base -->
-        <title>Новости</title>
+        <title>Категории</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -48,10 +48,28 @@
         </header>
 
         <main>
-           
+           <h2>Категории</h2>
+           <div class="categories">
+            <h3 class="categories__title">Спорт</h3>
+            <div class="categories__actions">
+                <a
+                href="./edit.html?id=1"
+                class="button button--blue button--small"
+            >
+                Редактировать
+            </a>
+            <button
+                type="button"
+                class="button button--red button--small"
+                onclick="deleteNews(1)"
+            >
+                Удалить
+            </button>
+            </div>
+           </div>
         </main>
 
         <!-- JS -->
-        <script src="./js/index.js"></script>
+        <script src="./js/categories.js"></script>
     </body>
 </html>
