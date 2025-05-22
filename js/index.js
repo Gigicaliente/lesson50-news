@@ -1,8 +1,8 @@
-const BASE_URL = "https://webfinalapi.mobydev.kz"
+const BASE_URL = 'https://webfinalapi.mobydev.kz'
 
 async function fetchAndRenderNews() {
     try {
-        const response = await fetch(`${BASE_URL}/news`);
+        const response = await fetch(`https://webfinalapi.mobydev.kz/news`);
         if (!response.ok) throw new Error(`Ошибка HTTP: ${response.status}`);
 
         const newsArray = await response.json();
@@ -10,7 +10,7 @@ async function fetchAndRenderNews() {
                 <article class="news-card">
                     <div class="news-card__image">
                         <img
-                            src="${BASE_URL}${news.thumbnail.startsWith('/') ? '' : '/'}${news.thumbnail}"
+                            src="${'https://webfinalapi.mobydev.kz'}${news.thumbnail.startsWith('/') ? '' : '/'}${news.thumbnail}"
                             alt="${news.title}"
                         />
                     </div>

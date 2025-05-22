@@ -23,4 +23,8 @@
 
 .header__nav-link--active {
     background-color: #f0f0f0;
+    text-decoration: none;
+    color: black;
+    padding: 8px;
+    border-radius: 8px;
 }

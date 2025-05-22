@@ -1,3 +1,5 @@
+
+
 h2 {
     font-weight: 700;
     font-size: 32px;
@@ -8,6 +10,7 @@ h2 {
 
    margin-inline: 56px;
     margin-block: 48px;
+    position: relative;
 }
 
 .categories {
@@ -25,4 +28,11 @@ h2 {
 
 .categories__actions {
     
+}
+
+.image-link {
+position: absolute;
+bottom: 100px;
+right: 56px;
+  
 }

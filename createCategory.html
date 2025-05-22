@@ -2,12 +2,13 @@
 <html lang="ru">
     <head>
         <!-- Base -->
-        <title>Категории</title>
+        <title>Создание категории</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <!-- CSS -->
         <link rel="stylesheet" href="./css/index.css" />
+        <link rel="stylesheet" href="./css/createCategories.css">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -43,41 +44,24 @@
                 </ol>
             </nav>
             <div class="header__auth">
-                <a href="./login.html" class="button button--blue">Войти</a>
+                <span class="header-author">Администратор</span>
+                <a href="./index.html" class="button button--red">Выйти</a>
             </div>
         </header>
 
         <main>
-           <h2>Категории</h2>
-           <div class="categories__box">
-            <div class="categories">
-            <h3 class="categories__title">Спорт</h3>
-            <div class="categories__actions">
-                <a
-                href="./edit.html?id=1"
-                class="button button--blue button--small"
-            >
-                Редактировать
-            </a>
-            <button
-                type="button"
-                class="button button--red button--small"
-                onclick="deleteNews(1)"
-            >
-                Удалить
-            </button>
-            </div>
+            
+           <div class="new-category">
+            <h2>Создание категорий</h2>
+            <label for="categoryName">Hазвание</label>
+            <input type="text" id="categoryName" placeholder="Введите название">
+            <button class="button button--blue button--small">Добавить категорию</button>
+           
            </div>
-        </div>  
-        
-        <a href="./createCategory.html" class="image-link">
-            <img src="./img/create.png" alt="createCategory">
-        </a>
-
+        </div>
         </main>
-       
-      
+
         <!-- JS -->
-        <script src="./js/categories.js"></script>
+        <script src="./js/news.js"></script>
     </body>
 </html>
