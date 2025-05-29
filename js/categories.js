@@ -11,7 +11,7 @@ async function fetchAndRenderCategories() {
             <h3 class="categories__title">${categories.name}</h3>
             <div class="categories__actions">
                 <a
-                href="./edit.html?id=${categories.id}"
+                href="./editCategory.html?id=${categories.id}"
                 class="button button--blue button--small"
             >
                 Редактировать
@@ -33,4 +33,10 @@ async function fetchAndRenderCategories() {
 };
 document.addEventListener('DOMContentLoaded', fetchAndRenderCategories)
 
+
+const del = document.querySelector('.button--delete');
+
+del.addEventListener('click', () => {
+    alert('Вы уверены что хотите удалить данную категорию?');
+})
 
