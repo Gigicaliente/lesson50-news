@@ -2,7 +2,7 @@
 <html lang="ru">
     <head>
         <!-- Base -->
-        <title>Новости</title>
+        <title>Login</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -19,28 +19,33 @@
         />
     </head>
     <body>
-     <main>
-        <div class="box">
-            <a href="./index.html" class="header__logo">
+ 
+        <form class="box">
                 <img src="./img/logo.svg" alt="Логотип" />
-            </a>
-<div class="inputBox">
+        <div class="inputBox">
             <label for="email">Email</label>
-            <input type="text" id="email" placeholder="Введите email">
+            <input 
+            class="email-input"
+            type="text" 
+            id="email" 
+            placeholder="Введите email">
 
             <label for="password">Пароль</label>
-            <input type="text" id="password" placeholder="Введите пароль">
+            <input 
+            class="password-input"
+            type="password" 
+            id="password" 
+            placeholder="Введите пароль">
         </div>
             <button class="button button--blue button--small button--long">Войти</button>  
             <div class="signUpBox">
                 <p class="question">Нет аккаунта?</p>
                 <a href="./signUp.html" class="signUp">Зарегистрироваться</a>
             </div>
-    </div>
-     </main>
-        
+        </form>
+
 
         <!-- JS -->
-        <script src="./js/news.js"></script>
+        <script src="./js/signIn.js"></script>
     </body>
 </html>

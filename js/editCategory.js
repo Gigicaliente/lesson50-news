@@ -12,7 +12,7 @@ async function fetchAndRenderCategoriesById(categoriesId) {
         const response = await fetch(`${BASE_URL}/categories/${categoriesId}`);
         if (!response.ok) throw new Error(`Ошибка HTTP: ${response.status}`);
 
-        const news = await response.json();
+        const categories = await response.json();
        
         document.querySelector('#categoryName').textContent = categories.name;
     
