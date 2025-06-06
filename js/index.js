@@ -76,7 +76,7 @@ function setupActionButtons() {
             if (!authToken) {
                 event.preventDefault();
                 alert("Авторизуйтесь для редактирования.");
-            }
+            } 
         });
     });
 
@@ -93,7 +93,7 @@ function displayCreateButton() {
         const createButton = document.createElement("button");
         createButton.className = "button button--green";
         createButton.textContent = "+";
-        createButton.onclick = () => (window.location.href = "./create.html");
+        createButton.onclick = () => (window.location.href = "./createNews.html");
         document.querySelector('.news-grid').before(createButton);
     }
 }
