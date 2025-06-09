@@ -1,5 +1,4 @@
- .box {
-   
+ .container {
     display: flex;
     flex-direction: column;
     margin: 236px 470px;
@@ -10,27 +9,27 @@
     border-radius: 40px; 
 }
 
-.inputBox {
+.box {
     display: flex;
     flex-direction: column;
-    align-self: self-start;
+    align-items: start;
     width: 100%;
     padding: 0px;
     margin: 0px;
     
 
 }
-label {
+.email, .password, .name {
     color: #707070;
     font-size: 14px;
     font-weight: 500;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
   
     
     
 }
 
-input {
+.email-input, .password-input, .name-input {
     font-weight: 500;
     font-size: 16px;
     padding: 16px;
@@ -38,30 +37,34 @@ input {
     border-radius: 10px;
     opacity: 60%;
     margin-bottom: 20px;
+    width: 100%;
+
 }
 
 
 
-.signUpBox {
-    display: flex;
 
- 
-}
-
-.button--long {
+.login--button {
     width: 100%;
     padding: 16px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
 
     
 }
 
-.question {
+.register {
+    text-decoration: none;
     margin: 0px;
+    border: none;
+    color: #707070;
+    font-size: 16px;
 }
 
 
 .signUp {
  text-decoration: none;
  color: #0077B6;
-
+border: none;
 } 

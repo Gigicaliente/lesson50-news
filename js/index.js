@@ -1,8 +1,38 @@
-const BASE_URL = 'https://webfinalapi.mobydev.kz'
+const BASE_URL = "https://webfinalapi.mobydev.kz";
+
+async function deleteNews (id) {
+    const authToken = localStorage.getItem("authToken");
+
+    if (!authToken) {
+        alert("Авторизуйтесь для удаления!");
+        return;
+    }
+
+    const isConfirmed = confirm("Вы уверены что хотите удалить данную новость?");
+    if(!isConfirmed) return;
+
+    try {
+        const response = await fetch(`${BASE_URL}/news/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${authToken}`
+            }
+        });
+
+        if (response.ok) {
+            alert('Новость успешно удалена.');
+            fetchAndRenderNews();
+        } else {
+            alert('Ошибка при удалении новости.');
+        }
+    } catch (error) {
+        console.error('Ошибка', error);
+    }
+}
 
 async function fetchAndRenderNews() {
     try {
-        const response = await fetch(`https://webfinalapi.mobydev.kz/news`);
+        const response = await fetch(`${BASE_URL}/news`);
         if (!response.ok) throw new Error(`Ошибка HTTP: ${response.status}`);
 
         const newsArray = await response.json();
@@ -10,7 +40,7 @@ async function fetchAndRenderNews() {
                 <article class="news-card">
                     <div class="news-card__image">
                         <img
-                            src="${'https://webfinalapi.mobydev.kz'}${news.thumbnail.startsWith('/') ? '' : '/'}${news.thumbnail}"
+                            src="${BASE_URL}${news.thumbnail.startsWith('/') ? '' : '/'}${news.thumbnail}"
                             alt="${news.title}"
                         />
                     </div>
@@ -56,12 +86,11 @@ async function fetchAndRenderNews() {
                     </div>
                 </article>
             `).join('');
-
+            setupActionButtons();
     } catch (error) {
-        console.error('Ошибка при получении новостей', error);
+        console.error('Ошибка при получении новостей:', error);
     }
-};
-
+}
 
 function setupActionButtons() {
     const authToken = localStorage.getItem("authToken");
@@ -76,7 +105,7 @@ function setupActionButtons() {
             if (!authToken) {
                 event.preventDefault();
                 alert("Авторизуйтесь для редактирования.");
-            } 
+            }
         });
     });
 
@@ -93,7 +122,7 @@ function displayCreateButton() {
         const createButton = document.createElement("button");
         createButton.className = "button button--green";
         createButton.textContent = "+";
-        createButton.onclick = () => (window.location.href = "./createNews.html");
+        createButton.onclick = () => (window.location.href = "./create.html");
         document.querySelector('.news-grid').before(createButton);
     }
 }
@@ -105,6 +134,5 @@ function logout() {
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchAndRenderNews();
-    setupActionButtons();
     displayCreateButton();
 });

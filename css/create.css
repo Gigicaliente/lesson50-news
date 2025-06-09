@@ -1,0 +1,50 @@
+.container {
+display: flex;
+flex-direction: column;
+
+padding: 0px;
+
+}
+
+
+.add-news {
+    font-weight: 700;
+    font-size: 32px;
+    align-self: self-start;
+    margin: 0%;
+}
+
+.box{
+flex-direction: column;
+}
+
+.news-name, .news-category, .news-cover, .news-content {
+    color: #707070;
+    font-weight: 500;
+    font-size: 14px;
+    border: none;
+    align-self: self-start;
+    padding: 0%;
+    margin-bottom: 0px;
+    margin-top: 20px;
+    
+}
+
+.name-input, .category-input, .content-input, .cover-input {
+   padding: 16px;
+   border: 1px solid #E6E6E6;
+   box-shadow: none;
+   border-radius: 12px;
+   color: black;
+  opacity: 60%;
+  width: 100%;
+  
+}
+
+
+.button--create {
+    align-self: self-start;
+    margin-left: 0px;
+    margin-top: 20px;
+}
+

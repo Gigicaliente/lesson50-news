@@ -33,12 +33,24 @@
 }
 
 .button--green {
+    height: 80px;
+    width: 80px;
     background-color: #52B788;
     color: #fff;
+    font-size: 40px;
+    font-weight: 100;
     border-radius: 50%;
-    position: fixed;
+    position: absolute;
     right: 56px;
     bottom: 60px;
-    padding-block: 20px;
 
 }
+
+.news-edit, .news-delete {
+border-radius: 50%;
+width: 80px;
+height: 80px;
+margin-bottom: 8px;
+position: fixed;
+}
+
