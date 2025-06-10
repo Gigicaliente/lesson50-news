@@ -100,7 +100,7 @@ function setupActionButtons() {
         headerAuth.innerHTML = `<button class="button button--red" onclick="logout()">Выйти</button>`;
     }
 
-    document.querySelectorAll(".news-card__actions a.button--blue").forEach(link => {
+    document.querySelectorAll(".news-card__actions .button--blue").forEach(link => {
         link.addEventListener("click", event => {
             if (!authToken) {
                 event.preventDefault();
@@ -109,7 +109,7 @@ function setupActionButtons() {
         });
     });
 
-    document.querySelectorAll(".news-card__actions button.button--red").forEach(button => {
+    document.querySelectorAll(".news-card__actions .button--red").forEach(button => {
         button.addEventListener("click", () => {
             if (!authToken) return alert("Авторизуйтесь для удаления.");
             // deleteNews(button.getAttribute("onclick").match(/\d+/)[0]);
@@ -123,7 +123,7 @@ function displayCreateButton() {
         createButton.className = "button button--green";
         createButton.textContent = "+";
         createButton.onclick = () => (window.location.href = "./create.html");
-        document.querySelector('.news-grid').before(createButton);
+      
     }
 }
 

@@ -1,8 +1,39 @@
-const BASE_URL = "https://webfinalapi.mobydev.kz"
+const BASE_URL = "https://webfinalapi.mobydev.kz";
+
+async function deleteCategory(id) {
+    const authToken = localStorage.getItem("authToken");
+
+    if (!authToken) {
+        alert("Авторизуйтесь для удаления!");
+        return;
+    }
+
+    const isConfirmed = confirm("Вы уверены что хотите удалить данную категорию?");
+    if(!isConfirmed) return;
+
+    try {
+        const response = await fetch(`${BASE_URL}/categoty/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${authToken}`
+            }
+        });
+
+        if (response.ok) {
+            alert('Категория успешно удалена.');
+            fetchAndRenderCategories();
+        } else {
+            alert('Ошибка при удалении категории.');
+        }
+    } catch (error) {
+        console.error('Ошибка', error);
+    }
+}
+
 
 async function fetchAndRenderCategories() {
     try {
-        const response = await fetch(`https://webfinalapi.mobydev.kz/categories`);
+        const response = await fetch(`${BASE_URL}/categories`);
         if (!response.ok) throw new Error(`Ошибка HTTP: ${response.status}`);
 
         const categoriesArray = await response.json();
@@ -33,12 +64,6 @@ async function fetchAndRenderCategories() {
 };
 
 
-const del = document.querySelector('.button--delete');
-
-del.addEventListener('click', () => {
-    alert('Вы уверены что хотите удалить данную категорию?');
-})
-
 function setupActionButtons() {
     const authToken = localStorage.getItem("authToken");
 
@@ -66,10 +91,10 @@ function setupActionButtons() {
 
 function displayCreateCategory() {
     if (localStorage.getItem("authToken")) {
-        const createCategory = document.createElement("button");
-        createCategory.className = "button button--green";
+        const createButton = document.createElement("button");
+        createButton.className = "button button--green";
         createButton.textContent = "+";
-        createCategory.onclick = () => (window.location.href = "./createCategory.html");
+        createButton.onclick = () => (window.location.href = "./createCategory.html");
 
     }
 }
@@ -80,6 +105,8 @@ function logout() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-   fetchAndRenderCategories();
+    setupActionButtons();
+    fetchAndRenderCategories();
     displayCreateCategory();
+    deleteCategory();
 });
