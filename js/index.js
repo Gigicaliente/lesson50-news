@@ -123,8 +123,8 @@ function displayCreateButton() {
         createButton.className = "button button--green";
         createButton.textContent = "+";
         createButton.onclick = () => (window.location.href = "./create.html");
-      
-    }
+        document.querySelector('.news-grid').before(createButton);
+      }
 }
 
 function logout() {

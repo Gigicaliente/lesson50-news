@@ -1,36 +1,46 @@
-function getCategoriesIdFromUrl() {
-    const params = new URLSearchParams(window.location.search);
-    return params.get('id');
-}
 
-const categoriesId = getCategoriesIdFromUrl();
 
-const BASE_URL = "https://webfinalapi.mobydev.kz";
+const authToken = localStorage.getItem("authToken");
+    const headerAuth = document.querySelector(".header__auth");
 
-async function fetchAndRenderCategoriesById(categoriesId) {
-    try {
-        const response = await fetch(`${BASE_URL}/categories/${categoriesId}`);
-        if (!response.ok) throw new Error(`Ошибка HTTP: ${response.status}`);
-
-        const categories = await response.json();
-       
-        document.querySelector('#categoryName').textContent = categories.name;
+if (authToken) {
+        headerAuth.innerHTML = `<button class="button button--red" onclick="logout()">Выйти</button>`;
+    }
+    
     
 
-    } catch (error) {
-        console.error('Ошибка при получении категории', error);
+ document.querySelector('.button--blue').addEventListener('click', async (event) => {
+
+    const name = document.getElementById('categoryName').value;
+
+    if (!name) {
+        alert('Пожалуйста, заполните поле');
+        return;
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryId = urlParams.get('id');
+    
+    const formData = new FormData();
+    formData.append('categoryName', name);
+    
+    try {
+        const response = await fetch('https://webfinalapi.mobydev.kz/category/${categoryId}', {
+            method: 'PUT',
+            headers: {
+                "Authorization": `Bearer ${authToken}`,
+                'Accept': 'application/json',
+            },
+            body: formData
+        });
+
+        if (response.ok) {
+            alert('Категория успешно обновлена!');
+            window.location.href = './categories.html';
+        } else {
+            alert("Ошибка при обновлении категории!");
         }
+    } catch (error) {
+        console.error('Ошибка', error);
     }
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const categoriesId = getCategoriesIdFromUrl();
-    if (categoriesId) {
-    fetchAndRenderCategoriesById(categoriesId)
-    } else {
-     console.error('Id категории не найден');
-    }
-
-    })
-
-
+});

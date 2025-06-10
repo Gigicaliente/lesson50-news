@@ -1,7 +1,12 @@
  .container {
     display: flex;
     flex-direction: column;
-    margin: 236px 470px;
+    width: 500px;
+    height: 600px;
+    position: absolute;
+    top: 240px;
+    left: 470px;
+
     gap: 30px;
     padding: 32px;
     align-items: center;

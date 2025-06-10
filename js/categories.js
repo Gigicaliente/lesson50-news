@@ -50,7 +50,7 @@ async function fetchAndRenderCategories() {
             <button
                 type="button"
                 class="button button--red button--small"
-                onclick="deleteNews(${categories.id})"
+                onclick="deleteCategory(${categories.id})"
             >
                 Удалить
             </button>
@@ -84,7 +84,6 @@ function setupActionButtons() {
     document.querySelectorAll(".categories__actions .button--red").forEach(button => {
         button.addEventListener("click", () => {
             if (!authToken) return alert("Авторизуйтесь для удаления.");
-  
         });
     });
 }
@@ -95,6 +94,7 @@ function displayCreateCategory() {
         createButton.className = "button button--green";
         createButton.textContent = "+";
         createButton.onclick = () => (window.location.href = "./createCategory.html");
+        document.querySelector('.categories__box').before(createButton);
 
     }
 }
@@ -108,5 +108,5 @@ document.addEventListener('DOMContentLoaded', () => {
     setupActionButtons();
     fetchAndRenderCategories();
     displayCreateCategory();
-    deleteCategory();
+   
 });
